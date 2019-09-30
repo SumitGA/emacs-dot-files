@@ -1,3 +1,4 @@
+;; Initializations
 (require 'package)
 (setq package-enable-at-startup nil)
 (setq package-archives '(("org"   . "http://orgmode.org/elpa/")
@@ -129,6 +130,8 @@
   :ensure t
   :init
   (setq projectile-require-project-root nil)
+  (setq projectile-completion-system 'ivy)
+  (setq projectile-indexing-method 'alien)
   :config
   (projectile-mode 1))
 
@@ -155,6 +158,8 @@
   :init
   (setq which-key-separator " ")
   (setq which-key-prefix-prefix "+")
+  (setq which-key-popup-type 'minibuffer)
+  (setq which-key-sort-order 'which-key-key-order)
   :config
   (which-key-mode))
 
@@ -242,23 +247,21 @@
   :diminish rubocop-mode)
 
 ;; Robe code assistance
-(use-package robe
-  :ensure t
-  :bind("C-r-j" .robe-jump)
-  :init
-  (add-hook 'ruby-mode-hook 'robe-mode)
-  :config
-  (defadvice inf-ruby-console-auto
-      (before activate-rvm-for-robe activate)
-    (rvm-activate-corresponding-ruby)))
+;;(use-package robe
+;; :ensure t
+ ;; :bind("C-r-j" .robe-jump)
+  ;;:init
+  ;;(add-hook 'ruby-mode-hook 'robe-mode)
+  ;;:config
+  ;;(defadvice inf-ruby-console-auto
+   ;;   (before activate-rvm-for-robe activate)
+    ;;(rvm-activate-corresponding-ruby)))
 
 ;; Robe with company
-(use-package company
-  :no-require t
-  :config
-  (push 'company-robe company-backends))
-
-
+;;(use-package company
+ ;; :no-require t
+  ;;:config
+  ;;(push 'company-robe company-backends))
 
 
 
