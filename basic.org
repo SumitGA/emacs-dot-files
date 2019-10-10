@@ -1,0 +1,48 @@
+#+BEGIN_SRC emacs-lisp
+;; Some term enhancement
+(defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
+  (if (memq (process-status proc) '(signal exit))
+      (let ((buffer (process-buffer proc)))
+        ad-do-it
+        (kill-buffer buffer))
+    ad-do-it))
+(ad-activate 'term-sentinel)
+
+(defadvice ansi-term (before force-bash)
+  (interactive (list "/bin/zsh")))
+(ad-activate 'ansi-term)
+
+;; Keybinding for term mode
+(add-hook 'term-mode
+          (lambda () (global-set-key (kbd "s-v") 'term-paste)))
+
+;; Anzu for search matching
+(use-package anzu
+  :ensure t
+  :config
+  (global-anzu-mode 1)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+  (global-set-key [remap query-replace] 'anzu-query-replace))
+
+;; RipGrep
+(use-package helm-rg :ensure t)
+
+;; All The Icons
+(use-package all-the-icons :ensure t)
+
+;; Basic Settings
+  (setq make-backup-files nil)
+  (setq auto-save-default nil)
+
+  (setq show-paren-delay 0)
+  (show-paren-mode  1)
+
+  (global-set-key (kbd "s-j") 'forward-paragraph)
+  (global-set-key (kbd "s-k") 'backward-paragraph)
+  
+;; Flycheck
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))
+
+#+END_SRC

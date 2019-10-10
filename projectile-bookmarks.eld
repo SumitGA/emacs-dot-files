@@ -1,1 +1,1 @@
-("~/PersonalDirectory/codedash-frontend/" "~/.tmux/" "~/Projects/personal-website/" "~/.emacs.d/" "~/PersonalDirectory/test-api/")
+("~/.emacs.d/")

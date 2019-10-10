@@ -1,0 +1,11 @@
+#+BEGIN_SRC emacs-lisp
+;; OrgMode Configs
+(setq org-html-validation-link nil)
+(setq org-todo-keywords
+      '((sequence "TODO" "WORKING" "HOLD" "|" "DONE")))
+(setq org-todo-keyword-faces
+      '(("TODO"    . "blue")
+	("WORKING" . "yellow")
+	("HOLD"    . "red")
+	("DONE"    . "green")))
+#+END_SRC 

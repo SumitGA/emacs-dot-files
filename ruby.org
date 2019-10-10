@@ -1,0 +1,46 @@
+#+BEGIN_SRC emacs-lisp
+;; Ruby
+(use-package ruby-mode
+  :ensure t
+  :mode "\\.rb\\'"
+  :mode "Rakefile\\'"
+  :mode "Gemfile\\'"
+  :mode "Berksfile\\'"
+  :mode "Vagrantfile\\'"
+  :interpreter "ruby"
+  :init
+  (setq ruby-indent-level 2
+	ruby-indent-tabs-mode nil)
+  (add-hook 'ruby-mode 'super)
+  :bind
+  (([(meta down)] . ruby-forward-sexp)
+   ([(meta up)]   . ruby-backward-sexp)
+   (("C-c C-e"    . ruby-send-region)))) ;;Rebind since Rubocop uses C-c C-r
+
+;; RVM Integration
+(use-package rvm
+  :ensure t
+  :config
+  (rvm-use-default))
+
+;; Ruby REPL
+(use-package inf-ruby
+  :ensure t
+  :init
+  (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode))
+
+;; Rubocop for lint-like style checker for Ruby
+(use-package rubocop
+  :ensure t
+  :init
+  (add-hook 'ruby-mode-hook 'rubocop-mode)
+  :diminish rubocop-mode)
+
+;; Smart Parens
+(use-package smartparens
+  :ensure t
+  :diminish(smartparens-mode . "()")
+  :init
+  (use-package smartparens-ruby)
+  (add-hook 'ruby-mode-hook 'smartparens-strict-mode))
+#+END_SRC

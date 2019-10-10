@@ -1,0 +1,8 @@
+#+BEGIN_SRC emacs-lisp
+;; JavaScript
+(use-package js2-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode)))
+(use-package tern :ensure t)
+#+END_SRC
