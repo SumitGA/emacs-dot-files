@@ -1,3 +1,4 @@
+* Project Management Configuration with Projectile
 #+BEGIN_SRC emacs-lisp
 (use-package projectile
   :ensure t
@@ -5,6 +6,7 @@
   (setq projectile-require-project-root nil)
   (setq projectile-completion-system 'ivy)
   (setq projectile-indexing-method 'alien)
+  (setq projectile-switch-project-action 'projectile-dired)
   :config
   (projectile-mode 1))
 

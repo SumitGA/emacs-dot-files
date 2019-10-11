@@ -1,1 +1,1 @@
-("~/.emacs.d/")
+("~/PersonalDirectory/CodeDash/" "~/.emacs.d/")

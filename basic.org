@@ -1,3 +1,4 @@
+* Basic Configuration 
 #+BEGIN_SRC emacs-lisp
 ;; Some term enhancement
 (defadvice term-sentinel (around my-advice-term-sentinel (proc msg))
@@ -46,3 +47,10 @@
   :init (global-flycheck-mode))
 
 #+END_SRC
+* Magit Configuration 
+  #+BEGIN_SRC emacs-lisp
+  (use-package magit
+    :ensure t
+    :config
+    (global-set-key (kbd "C-c m") 'magit-status))
+  #+END_SRC

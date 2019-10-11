@@ -60,7 +60,7 @@
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 5) ((control)))))
  '(package-selected-packages
    (quote
-    (dashboard fontawesome font-utils all-the-icons-gnus all-the-icons-dired all-the-icons-ivy company-lsp emojify web-mode tide tss doom-modeline quickrun org-bullets lsp-ui flycheck-rust spaceline-all-the-icons spaceline flycheck-inline lsp-rust f lsp-mode rust-mode pdf-tools company js2-mode diff-hl editorconfig general which-key helm doom-themes evil use-package)))
+    (evil-magit dashboard fontawesome font-utils all-the-icons-gnus all-the-icons-dired all-the-icons-ivy company-lsp emojify web-mode tide tss doom-modeline quickrun org-bullets lsp-ui flycheck-rust spaceline-all-the-icons spaceline flycheck-inline lsp-rust f lsp-mode rust-mode pdf-tools company js2-mode diff-hl editorconfig general which-key helm doom-themes evil use-package)))
  '(send-mail-function (quote smtpmail-send-it)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
