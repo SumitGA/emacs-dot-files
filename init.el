@@ -80,3 +80,4 @@
  '(mode-line ((t (:background "#191919" :box nil))))
  '(mode-line-inactive ((t (:background "#282828" :foreground "#5B6268" :box nil))))
  '(term ((t (:foreground "#fafafa")))))
+(put 'dired-find-alternate-file 'disabled nil)
