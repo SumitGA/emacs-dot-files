@@ -49,7 +49,7 @@
 #+END_SRC
 * Magit Configuration 
   #+BEGIN_SRC emacs-lisp
-  (use-package magit
+  (use-package evil-magit
     :ensure t
     :config
     (global-set-key (kbd "C-c m") 'magit-status))

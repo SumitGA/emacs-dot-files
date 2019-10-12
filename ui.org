@@ -1,3 +1,4 @@
+* Basic UI Settings
 #+BEGIN_SRC emacs-lisp
 ;; Theme
 (use-package doom-themes
@@ -9,12 +10,11 @@
 (require 'dashboard)
 (dashboard-setup-startup-hook)
 
-(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard. Keep Hacking")
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-set-heading-icons t)
 (setq dashboard-set-file-icons t)
 (setq dashboard-set-navigator t)
-
 
 ;; UI settings
   (scroll-bar-mode -1)
@@ -46,3 +46,4 @@
   (spaceline-toggle-evil-state-on))
 
 #+END_SRC
+
